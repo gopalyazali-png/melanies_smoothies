@@ -23,7 +23,8 @@ if ingreditients_list:
     st.text(ingreditients_list);
     ingredients_string = ''
     for x in ingreditients_list:
-        ingredients_string+=x + ' '    
+        ingredients_string+=x + ' '
+        st.subheader(x + ' Nutrition Information')
         smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
         sf_df=st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
